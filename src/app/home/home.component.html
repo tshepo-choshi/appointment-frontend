@@ -1,0 +1,14 @@
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ng-container *ngIf="isDataLoaded">
+        <app-profile [clientData]="clientData"></app-profile>
+      </ng-container>
+      <p *ngIf="!isDataLoaded">Loading client data...</p>
+    </div>
+    <div class="col">
+      <app-appointment [appointment]="appointment"></app-appointment>
+    </div>
+  </div>
+</div>

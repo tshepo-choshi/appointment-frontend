@@ -1,0 +1,29 @@
+<div id="bookAppointmentDiv">
+    <div><h2>Book Appointment</h2></div>
+    <br><br>
+    <div class="spinner-overlay" *ngIf="showSpinner">
+        <div class="spinner"></div> 
+    </div>
+    <div class="mb-3">
+        <select id="branchOptions" name="mySelect" class="form-select" (change)="onSelectionChange($event)" aria-label="Default select example">
+            <option [value]="null">Select Branch</option>
+            @for (branch of branchList; track branch.branchCode){
+                <option>{{ branch.branchCode }}</option>
+            }
+        </select>
+    </div>
+     <div class="mb-3">
+        <label for="bookDateTime" class="form-label">Date & Time</label>
+        <input type="datetime-local" class="form-control" id="bookDateTime" [(ngModel)]="startTime" required>
+    </div>
+     <div class="mb-3">
+        <div class="form-floating">
+          <textarea class="form-control" id="description" style="height: 100px" [(ngModel)]="description" required></textarea>
+            <label for="description">Description</label>
+        </div>
+    </div>
+    <br>
+    <div>
+      <button type="button" class="btn btn-primary btnPrimary" style="margin-bottom: 20px;" (click)="bookAppointment()">Submit</button>
+    </div>
+</div>

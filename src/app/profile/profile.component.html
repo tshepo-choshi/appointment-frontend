@@ -1,0 +1,20 @@
+<div id="profileDiv">
+    <div><h2>Profile</h2></div>
+    <br><br>
+     <div class="mb-3">
+        <label for="firstNameInputRegister" class="form-label">Firstname</label>
+        <input type="text" class="form-control" id="firstNameInputRegister" required [(ngModel)]="firstNamePro">
+    </div>
+     <div class="mb-3">
+        <label for="lastNameInputRegister" class="form-label">Lastname</label>
+        <input type="text" class="form-control" id="lastNameInputRegister" required [(ngModel)]="lastNamePro">
+    </div>
+    <div class="mb-3">
+        <label for="emailInputRegister" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailInputRegister" [(ngModel)]="emailPro"readonly>
+    </div>
+    <br>
+    <div>
+      <button type="button" class="btn btn-primary btnPrimary" style="margin-bottom: 20px;" (click)="updateClient()" disabled>Update</button>
+    </div>
+</div>

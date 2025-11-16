@@ -1,0 +1,30 @@
+
+<div><h2>Booking Overview</h2></div>
+<div class="accordion" id="accordionDiv">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button *ngIf="appointment != undefined && appointment.length > 0"  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Active Appointments
+      </button>
+      <button *ngIf="appointment == undefined || appointment.length == 0"  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        No Active Appointments
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="padding-bottom: 50px;">
+
+        <div class="mb-3" *ngFor="let theAppointment of appointment">
+            <p><strong>Date Time: </strong><span>{{ theAppointment.startTime }}</span></p>
+            <p><strong>Branch: </strong> <span>{{ theAppointment.branchCode }}</span></p>
+            <div class="form-floating">
+                <textarea class="form-control" style="height: 100px" readonly>{{theAppointment.description}}</textarea>
+                <label for="description">Description</label>
+            </div>
+            <button type="button" class="btn btn-danger" style="float: right; margin-top: 5px;" (click)="deleteAppointment(theAppointment.id)">Delete</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>

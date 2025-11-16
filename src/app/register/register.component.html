@@ -1,0 +1,27 @@
+<div id="registerDiv">
+    <div><h2>Register</h2></div>
+    <br><br>
+     <div class="mb-3">
+        <label for="firstNameInputRegister" class="form-label">Firstname</label>
+        <input type="text" class="form-control" id="firstNameInputRegister" [(ngModel)]="firstNameInputRegister" required>
+    </div>
+     <div class="mb-3">
+        <label for="lastNameInputRegister" class="form-label">Lastname</label>
+        <input type="text" class="form-control" id="lastNameInputRegister" [(ngModel)]="lastNameInputRegister" required>
+    </div>
+    <div class="mb-3">
+        <label for="emailInputRegister" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailInputRegister" [(ngModel)]="emailInputRegister" required>
+    </div>
+    <div class="mb-3">
+        <label for="passwordInputRegister" class="form-label">Password</label>
+        <input type="password" class="form-control" id="passwordInputRegister" [(ngModel)]="passwordInputRegister" required>
+    </div>
+    <br>
+    <div>
+      <button type="button" class="btn btn-primary btnPrimary" style="margin-bottom: 20px;" (click)="registerSubmit()">Register</button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-secondary btnGrey" style="margin-bottom: 20px;" [routerLink]="['/login']">Login</button>
+    </div>
+</div>

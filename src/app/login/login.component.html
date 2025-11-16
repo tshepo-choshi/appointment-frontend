@@ -1,0 +1,17 @@
+<div id="loginDiv">
+    <div><h2>Login</h2></div>
+    <br><br>
+    <div class="mb-3">
+        <label for="emailInput" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailInput" [(ngModel)]="emailInput" required>
+    </div>
+    <div class="mb-3">
+        <label for="passwordInput" class="form-label">Password</label>
+        <input type="password" class="form-control" id="passwordInput" [(ngModel)]="passwordInput" required>
+    </div>
+    <br>
+    <div>
+      <button type="button" class="btn btn-primary btnPrimary" style="margin-bottom: 20px;" (click)="loginSubmit()">Login</button>
+      <button type="button" class="btn btn-secondary btnGrey" [routerLink]="['/register']">Register</button>
+    </div>
+</div>
